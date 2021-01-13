@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech Recognition Search</title>
+</head>
+<style>
+    .container{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+    }
+    button{
+        height: 100px;
+        width: 100px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+    }
+    .talk{
+        position: relative;
+        background: url('./icon.png') no-repeat;
+        background-size: cover;
+        margin-bottom: 10px;
+    }
+    .talk::before{
+        content: '';
+        position: absolute;
+        top: -55px;
+        left: -5px;
+        width: 100px;
+        height: 50px;
+        background: url("click.gif") no-repeat;
+        background-size:100px 50px ;
+    }
+    .result{
+        width: fit-content;
+        box-shadow: 0 0 10px #000;
+        padding: 0 20px;
+        border-radius: 20px;
+        background: linear-gradient(to bottom right,#f44336,#2196f3);
+    }
+    .popup{
+        width: 80%;
+        height: fit-content;
+        max-width: 300px;
+        border-radius: 30px;
+        position: fixed;
+        top: 50px;
+        right: 10px;
+        z-index: 2;
+        background: rgba(0, 0, 0, 0.7);
+        box-shadow: 0 0 10px #000;
+        padding: 0 10px;
+        text-align: center;
+        opacity: 0;
+        transform: translateX(350px);
+        transition: 0.7s ease-in-out;
+        transition-property: opacity, transform;
+    }
+    .close-popup{
+        width: 18px;
+        height: 18px;
+        padding: 2px;
+        background: red;
+        border-radius: 50%;
+        position: absolute;
+        box-shadow: 0 0 10px #000;
+        top: -8px;
+        right: -5px;
+        cursor: pointer;
+        font-family: "Quicksand", Arial, sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+    }
+    .popup h1{
+        color: #729fe2;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 2;
+        font-family: "Playfair Display", Georgia, serif;
+        margin-bottom: 0px;
+    }
+    .popup p{
+        color: #f9bf3f;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 2;
+        font-family: "Quicksand", Arial, sans-serif;
+    }
+</style>
+<body>
+    <div class="popup">
+        <b class="close-popup">&times</b>
+        <h1>Welcome Visitor</h1>
+        <p>This is an speedrun project made in 30 mins. It search anything you say with google using SpeechRecognition function of JavaScript.</p>
+    </div>
+    <div class="container">
+        <button class="talk"></button>
+        <div class="result">
+            <h3 class="content">SAY SOMETHING</h3>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
