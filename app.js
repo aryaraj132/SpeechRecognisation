@@ -28,6 +28,6 @@ btn.addEventListener('click', ()=> {
     recognition.start();
 });
 window.onload = function(){
-    //recognition.start();
+    recognition.start();
     document.querySelector('.popup').setAttribute("style","transform: translateX(0px);opacity:1;");
 }
