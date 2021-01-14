@@ -22,7 +22,7 @@ recognition.onresult = async function (event) {
     const transcript = event.results[current][0].transcript;
     content.textContent = transcript;
     await new Promise(wait => setTimeout(wait, 500));
-    window.open(`http://www.google.co.uk/search?hl=en-GB&source=hp&q=${transcript}`)
+    window.open(`http://www.google.com/search?hl=en-GB&source=hp&q=${transcript}`)
 };
 
 
