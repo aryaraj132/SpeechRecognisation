@@ -8,12 +8,14 @@ closePop.addEventListener('click',()=>{
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition ;
 const recognition = new SpeechRecognition();
 
-//recognition.onstart = function () {  
-//};
+recognition.onstart = function () {
+    document.body.insertAdjacentHTML("afterbegin", `<style>.bars{animation-duration: 0.3s;}</style>`)
+};
 
-//recognition.onspeechend = function () {
-    
-//};
+recognition.onspeechend = function () {
+    style = document.body.getElementsByTagName('style');
+    style[0].remove();
+};
 
 recognition.onresult = async function (event) {
     const current = event.resultIndex;

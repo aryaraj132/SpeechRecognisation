@@ -92,6 +92,33 @@
         line-height: 2;
         font-family: "Quicksand", Arial, sans-serif;
     }
+    .bar-container{
+        display: flex;
+        margin-bottom: 10px;
+        height: 40px;
+    }
+    .bars{
+        height: 10px;
+        width: 5px;
+        margin: 3px;
+        border-radius: 10px;
+        background: #000;
+        transition: height 0.2s ease-in-out;
+        animation: animate-bar infinite alternate;
+        animation-delay: calc(100ms * var(--i));
+        /*animation-duration: 0s;*/
+    }
+    @keyframes animate-bar{
+        0%{
+            transform: scaleY(1);
+        }
+        50%{
+            transform: scaleY(2);
+        }
+        100%{
+            transform: scaleY(2.5);
+        }
+    }
 </style>
 <body>
     <div class="popup">
@@ -101,6 +128,12 @@
     </div>
     <div class="container">
         <button class="talk"></button>
+        <div class="bar-container">
+            <div class="bars" style="background: rgb(81, 81, 255);--i:1;"></div>
+            <div class="bars" style="background: rgb(255, 81, 81);--i:2;"></div>
+            <div class="bars" style="background: rgb(248, 248, 81);--i:3;"></div>
+            <div class="bars" style="background: rgb(81, 255, 81);--i:4;"></div>
+        </div>
         <div class="result">
             <h3 class="content">SAY SOMETHING</h3>
         </div>
